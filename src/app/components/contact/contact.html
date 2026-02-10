@@ -1,0 +1,185 @@
+<section id="contact" class="section-padding relative overflow-hidden">
+  <div class="absolute inset-0 tech-grid opacity-20"></div>
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="p-2 rounded-lg bg-primary/10 border border-primary/30">
+          <i class="fa-solid fa-message text-primary text-[20px]"></i>
+        </div>
+        <span class="text-sm text-primary font-mono uppercase tracking-wider">
+          {{ 'contact.tag' | t }}
+        </span>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">
+        {{ 'contact.title1' | t }}<span class="gradient-text">{{ 'contact.titleHighlight' | t }}</span>
+      </h2>
+
+      <p class="text-lg text-muted-foreground max-w-2xl mb-12">
+        {{ 'contact.subtitle' | t }}
+      </p>
+
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Left column -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="space-y-4">
+            <div
+              *ngFor="let item of contactInfo"
+              class="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-all group"
+            >
+              <div class="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <i [class]="item.icon + ' text-primary text-[20px]'"></i>
+              </div>
+
+              <div>
+                <p class="text-xs text-muted-foreground uppercase tracking-wider">
+                  {{ item.label.includes('contact.') ? (item.label | t) : item.label }}
+                </p>
+
+                <ng-container *ngIf="item.href; else plainValue">
+                  <a
+                    [href]="item.href!"
+                    class="text-foreground hover:text-primary transition-colors font-mono"
+                  >
+                    {{ item.value.includes('contact.') ? (item.value | t) : item.value }}
+                  </a>
+                </ng-container>
+
+                <ng-template #plainValue>
+                  <p class="text-foreground font-mono">
+                    {{ item.value.includes('contact.') ? (item.value | t) : item.value }}
+                  </p>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-foreground mb-4 font-mono">
+              {{ 'contact.social' | t }}
+            </h3>
+
+            <div class="space-y-3">
+              <a
+                *ngFor="let social of socialLinks"
+                [href]="social.href"
+                target="_blank"
+                class="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-all group"
+              >
+                <div class="p-3 rounded-lg bg-secondary group-hover:bg-primary/10 transition-colors">
+                  <i
+                    [class]="social.icon + ' text-muted-foreground group-hover:text-primary transition-colors text-[20px]'"
+                  ></i>
+                </div>
+
+                <div>
+                  <p class="text-foreground font-medium group-hover:text-primary transition-colors">
+                    {{ social.label }}
+                  </p>
+                  <p class="text-xs text-muted-foreground font-mono">{{ social.username }}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/30">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span class="text-sm font-semibold text-foreground">{{ 'contact.available' | t }}</span>
+            </div>
+            <p class="text-sm text-muted-foreground">{{ 'contact.availableDesc' | t }}</p>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="lg:col-span-3">
+          <div class="p-6 md:p-8 rounded-xl bg-card border border-border">
+            <div class="flex items-center gap-2 mb-6 pb-4 border-b border-border">
+              <i class="fa-solid fa-terminal text-primary text-[18px]"></i>
+              <span class="font-mono text-sm text-muted-foreground">contact.send()</span>
+            </div>
+
+            <form #f="ngForm" (ngSubmit)="submit(f)" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-mono text-muted-foreground mb-2">
+                    {{ 'contact.name' | t }}
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    [(ngModel)]="formData.name"
+                    required
+                    [placeholder]="'contact.namePlaceholder' | t"
+                    class="w-full px-3 py-2 rounded-md bg-secondary border border-border focus:outline-none focus:border-primary font-mono"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-mono text-muted-foreground mb-2">
+                    {{ 'contact.email' | t }}
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    required
+                    placeholder="email@example.com"
+                    class="w-full px-3 py-2 rounded-md bg-secondary border border-border focus:outline-none focus:border-primary font-mono"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-mono text-muted-foreground mb-2">
+                  {{ 'contact.subject' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  [(ngModel)]="formData.subject"
+                  required
+                  [placeholder]="'contact.subjectPlaceholder' | t"
+                  class="w-full px-3 py-2 rounded-md bg-secondary border border-border focus:outline-none focus:border-primary font-mono"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-mono text-muted-foreground mb-2">
+                  {{ 'contact.message' | t }}
+                </label>
+                <textarea
+                  name="message"
+                  [(ngModel)]="formData.message"
+                  required
+                  rows="5"
+                  [placeholder]="'contact.messagePlaceholder' | t"
+                  class="w-full px-3 py-2 rounded-md bg-secondary border border-border focus:outline-none focus:border-primary font-mono resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                [disabled]="isSubmitting || f.invalid"
+                class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-primary text-primary-foreground
+                       hover:opacity-90 transition font-mono pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ng-container *ngIf="isSubmitting; else sendTpl">
+                  <span class="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin"></span>
+                  {{ 'contact.sending' | t }}
+                </ng-container>
+
+                <ng-template #sendTpl>
+                  <i class="fa-solid fa-paper-plane text-[18px]"></i>
+                  {{ 'contact.send' | t }}
+                </ng-template>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

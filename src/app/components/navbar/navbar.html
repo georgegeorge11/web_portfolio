@@ -1,0 +1,76 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [class.bg-transparent]="!isScrolled"
+  [class.bg-background/80]="isScrolled"
+  [class.backdrop-blur-xl]="isScrolled"
+  [class.border-b]="isScrolled"
+  [class.border-border]="isScrolled"
+>
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="p-1.5 rounded-lg bg-primary/10 border border-primary/30">
+          <i class="fa-solid fa-terminal text-primary text-[18px]"></i>
+        </div>
+        <span class="font-mono text-lg font-semibold">
+          georgepanfil<span class="text-primary">.dev</span>
+        </span>
+      </a>
+
+      <!-- Desktop -->
+      <div class="hidden md:flex items-center gap-6">
+        <a
+          *ngFor="let link of navLinks"
+          [href]="link.href"
+          class="text-sm font-mono text-muted-foreground hover:text-primary transition"
+        >
+          {{ link.key | t }}
+        </a>
+
+        <!-- Preferences dropdown (theme + language inside) -->
+        <app-preferences></app-preferences>
+
+        <!-- CV -->
+        <a
+          class="ml-2 px-3 py-2 rounded-md bg-primary text-primary-foreground font-mono text-sm hover:opacity-90 transition"
+          href="#"
+        >
+          {{ 'nav.downloadCV' | t }}
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        class="md:hidden p-2 rounded-lg hover:bg-secondary transition"
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle mobile menu"
+      >
+        <i
+          class="fa-solid text-[24px]"
+          [class.fa-bars]="!isMobileMenuOpen()"
+          [class.fa-xmark]="isMobileMenuOpen()"
+        ></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      *ngIf="isMobileMenuOpen()"
+      class="md:hidden mt-4 pt-4 border-t border-border animate-fade-in"
+    >
+      <div class="flex flex-col gap-4">
+        <a
+          *ngFor="let link of navLinks"
+          [href]="link.href"
+          class="font-mono text-muted-foreground hover:text-primary transition"
+        >
+          {{ link.key | t }}
+        </a>
+        <div class="flex items-center gap-3">
+          <app-preferences></app-preferences>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

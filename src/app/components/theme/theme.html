@@ -1,0 +1,13 @@
+<button
+      type="button"
+      (click)="theme.toggleTheme()"
+      [class]="className"
+      aria-label="Toggle theme"
+    >
+      <i
+        class="text-[16px]"
+        [class.fa-solid]="true"
+        [class.fa-sun]="theme.theme() === 'dark'"
+        [class.fa-moon]="theme.theme() !== 'dark'"
+      ></i>
+    </button>

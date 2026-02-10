@@ -1,0 +1,139 @@
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background effects -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.15),transparent_50%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.1),transparent_50%)]"></div>
+  <div class="absolute inset-0 tech-grid opacity-50"></div>
+  <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl float"></div>
+  <div
+    class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl float"
+    style="animation-delay:-3s"
+  ></div>
+
+  <div class="container mx-auto px-6 py-28 md:py-32 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <!-- LEFT -->
+        <div class="order-1 text-center lg:text-left">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-primary/30 mb-8 animate-fade-up"
+          >
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <span class="text-sm text-muted-foreground font-mono">{{ 'hero.available' | t }}</span>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 animate-fade-up stagger-1">
+            George <span class="gradient-text">Panfil</span>
+          </h1>
+
+          <div class="flex items-center justify-center lg:justify-start gap-2 mb-6 animate-fade-up stagger-2">
+            <i class="fa-solid fa-terminal text-primary text-[24px]"></i>
+            <p class="text-xl md:text-2xl text-foreground font-mono">Full Stack Developer</p>
+          </div>
+
+          <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 animate-fade-up stagger-3">
+            <span class="px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 text-primary font-mono text-sm">
+              Angular 17+
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-accent/10 border border-accent/30 text-accent font-mono text-sm">
+              .NET Core 8
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-secondary border border-border text-muted-foreground font-mono text-sm">
+              {{ 'hero.yearsExp' | t }}
+            </span>
+          </div>
+
+          <p
+            class="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-fade-up stagger-4"
+          >
+            {{ 'hero.summary' | t }}
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-fade-up stagger-5">
+            <a
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition pulse-glow font-mono"
+              href="#"
+            >
+              <i class="fa-solid fa-download text-[18px]"></i>
+              {{ 'hero.downloadCV' | t }}
+            </a>
+
+            <a
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-primary/50 hover:bg-primary/10 transition font-mono"
+              href="#portfolio"
+            >
+              <i class="fa-brands fa-github text-[18px]"></i>
+              {{ 'hero.viewProjects' | t }}
+            </a>
+          </div>
+
+          <div class="flex items-center justify-center lg:justify-start gap-4 mt-8 animate-fade-up" style="animation-delay:0.6s">
+            <a
+              href="#"
+              class="p-3 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 hover:bg-primary/10 transition-all group"
+            >
+              <i class="fa-brands fa-github text-muted-foreground group-hover:text-primary transition-colors text-[20px]"></i>
+            </a>
+
+            <a
+              href="#"
+              class="p-3 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 hover:bg-primary/10 transition-all group"
+            >
+              <i class="fa-brands fa-linkedin text-muted-foreground group-hover:text-primary transition-colors text-[20px]"></i>
+            </a>
+
+            <a
+              href="#contact"
+              class="p-3 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 hover:bg-primary/10 transition-all group"
+            >
+              <i class="fa-solid fa-envelope text-muted-foreground group-hover:text-primary transition-colors text-[20px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT / BELOW ON MOBILE -->
+        <div class="order-2 lg:order-2 animate-fade-up stagger-3">
+          <div class="relative max-w-full lg:max-w-none mx-auto">
+            <div class="rounded-xl bg-card border border-border overflow-hidden shadow-2xl glow-primary">
+              <div class="flex items-center gap-2 px-4 py-3 bg-secondary/50 border-b border-border">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <span class="ml-4 text-xs text-muted-foreground font-mono">developer.ts</span>
+              </div>
+
+              <!-- ✅ mobile friendly: padding/font responsive -->
+              <div class="p-4 lg:p-6 font-mono text-xs lg:text-sm">
+                <div *ngFor="let lineTokens of renderedLines; let i = index" class="flex gap-4">
+                  <span class="text-muted-foreground/50 select-none">{{ i + 1 }}</span>
+
+                  <span>
+                    <ng-container *ngFor="let tok of lineTokens">
+                      <span [class]="tok.cls">{{ tok.text }}</span>
+                    </ng-container>
+
+                    <span *ngIf="isTyping && i === currentLineIndex" class="terminal-cursor"></span>
+                  </span>
+                </div>
+
+                <div *ngIf="isTyping && !renderedLines[currentLineIndex]" class="flex gap-4">
+                  <span class="text-muted-foreground/50 select-none">{{ currentLineIndex + 1 }}</span>
+                  <span class="terminal-cursor"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- glows -->
+            <div class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-xl"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <a href="#about" class="text-muted-foreground hover:text-primary transition-colors">
+          <i class="fa-solid fa-arrow-down text-[24px]"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
