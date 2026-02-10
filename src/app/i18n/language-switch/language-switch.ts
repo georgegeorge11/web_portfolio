@@ -20,8 +20,8 @@ export class LanguageSwitch {
 
   get label(): string {
     const current = this.lang.language();
-    if (this.show === 'current') return current.toUpperCase();
-    return (current != 'ro' ? 'EN' : 'RO');
+    if (this.show === 'next') return current.toUpperCase();
+    return (current === 'ro' ? 'EN' : 'RO');
   }
 
   async toggle(): Promise<void> {

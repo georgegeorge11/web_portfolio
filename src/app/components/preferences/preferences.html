@@ -7,7 +7,6 @@
   </button>
 
   <!-- Dropdown -->
-<!-- Dropdown (nu mai folosi *ngIf aici) -->
 <div
   [hidden]="!isOpen"
   class="absolute right-0 mt-2 w-72 rounded-xl border border-border bg-card shadow-lg overflow-hidden z-50"
@@ -22,7 +21,7 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
         <i class="fa-solid fa-circle-half-stroke text-muted-foreground text-[14px]"></i>
-        <span class="font-mono text-sm text-foreground">Theme</span>
+        <span class="font-mono text-sm text-foreground">{{ 'nav.theme' | t }}</span>
       </div>
       <app-theme (changed)="handleChanged()"></app-theme>
     </div>
@@ -30,7 +29,7 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
         <i class="fa-solid fa-globe text-muted-foreground text-[14px]"></i>
-        <span class="font-mono text-sm text-foreground">Language</span>
+        <span class="font-mono text-sm text-foreground">{{ 'nav.language' | t }}</span>
       </div>
       <app-language-switch (changed)="handleChanged()"></app-language-switch>
     </div>

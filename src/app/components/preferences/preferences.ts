@@ -2,12 +2,13 @@ import { Component, ElementRef, EventEmitter, HostListener, Output } from '@angu
 import { CommonModule } from '@angular/common';
 import { Theme } from '../theme/theme';
 import { LanguageSwitch } from '../../i18n/language-switch/language-switch';
+import { TPipe } from '../../i18n/t-pipe';
 
 
 @Component({
   selector: 'app-preferences',
   standalone: true,
-  imports: [CommonModule, Theme, LanguageSwitch],
+  imports: [CommonModule, Theme, LanguageSwitch, TPipe],
   templateUrl: './preferences.html',
 })
 export class Preferences{

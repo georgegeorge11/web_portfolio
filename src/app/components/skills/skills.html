@@ -1,0 +1,92 @@
+<section id="skills" class="section-padding relative overflow-hidden">
+  <div class="absolute inset-0 tech-grid opacity-30"></div>
+  <div class="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2"></div>
+  <div class="absolute top-1/2 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2"></div>
+
+  <div class="container mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="p-2 rounded-lg bg-primary/10 border border-primary/30">
+          <i class="fa-solid fa-microchip text-primary text-[20px]"></i>
+        </div>
+        <span class="text-sm text-primary font-mono uppercase tracking-wider">
+          {{ 'skills.tag' | t }}
+        </span>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">
+        {{ 'skills.title1' | t }}<span class="gradient-text">{{ 'skills.titleHighlight' | t }}</span>
+      </h2>
+
+      <p class="text-lg text-muted-foreground max-w-2xl mb-12">
+        {{ 'skills.subtitle' | t }}
+      </p>
+
+      <!-- Tech pills -->
+      <div class="flex flex-wrap gap-3 mb-12">
+        <div
+          *ngFor="let tech of techStack"
+          class="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all cursor-default group"
+        >
+          <span class="text-lg">{{ tech.icon }}</span>
+          <span class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">
+            {{ tech.name }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          *ngFor="let cat of categories"
+          class="p-6 rounded-xl bg-card/50 border border-border hover:border-primary/30 transition-all group"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2 rounded-lg bg-gradient-to-br bg-opacity-10" [class]=" 'bg-gradient-to-br ' + cat.gradientClass + ' bg-opacity-10 p-2 rounded-lg' ">
+              <i [class]="cat.iconClass + ' text-foreground text-[24px]'"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground">{{ cat.titleKey | t }}</h3>
+          </div>
+
+          <div class="space-y-3">
+            <div
+              *ngFor="let skill of cat.skills"
+              class="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors"
+            >
+              <span class="font-mono text-sm text-foreground">{{ skill.name }}</span>
+
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-muted-foreground">{{ skill.yearsKey | t }}</span>
+
+                <!-- Badge -->
+                <span
+                  class="text-xs font-mono px-2 py-1 rounded-md border"
+                  [class]="getLevelClasses(skill.level)"
+                >
+                  {{ skill.level }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & workflow -->
+      <div class="mt-12 p-6 rounded-xl bg-card/50 border border-border">
+        <div class="flex items-center gap-3 mb-6">
+          <i class="fa-solid fa-screwdriver-wrench text-primary text-[20px]"></i>
+          <h3 class="text-lg font-semibold text-foreground">{{ 'skills.toolsWorkflow' | t }}</h3>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            *ngFor="let tool of tools"
+            class="px-3 py-1.5 text-sm bg-secondary/50 hover:bg-primary/10 hover:text-primary transition-colors cursor-default font-mono rounded-md"
+          >
+            {{ tool }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

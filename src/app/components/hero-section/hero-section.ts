@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../i18n/language.service';
 import { TPipe } from '../../i18n/t-pipe';
 import { Token } from '../../models/types';
+import { Helpers } from '../../utils/helpers';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class HeroSection implements OnInit, OnDestroy {
   constructor(
     public lang: LanguageService,
     private cdr: ChangeDetectorRef,
+    private helpers: Helpers
   ) {
     effect(() => {
       this.lang.language();
@@ -177,5 +179,9 @@ export class HeroSection implements OnInit, OnDestroy {
     }
 
     return out;
+  }
+
+  downloadCV(): void {
+    this.helpers.downloadFile();
   }
 }

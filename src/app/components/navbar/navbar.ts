@@ -1,16 +1,22 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { TPipe } from '../../i18n/t-pipe';
 import { CommonModule } from '@angular/common';
 import { NavLink } from '../../models/types';
 import { Preferences } from '../preferences/preferences';
+import { Theme } from '../theme/theme';
+import { LanguageSwitch } from '../../i18n/language-switch/language-switch';
+import { Helpers } from '../../utils/helpers';
 
 @Component({
   selector: 'app-navbar',
-  imports: [TPipe, CommonModule, Preferences],
+  imports: [TPipe, CommonModule, Preferences, Theme, LanguageSwitch],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
+
+  helper = inject(Helpers);
+
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
   readonly navLinks: NavLink[] = [
@@ -21,6 +27,8 @@ export class Navbar {
     { key: 'nav.education', href: '#education' },
     { key: 'nav.contact', href: '#contact' },
   ];
+
+  
 
   ngOnInit(): void {
     this.onScroll();
@@ -44,5 +52,10 @@ export class Navbar {
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen.set(false);
+  }
+
+
+  downloadCV(): void {
+    this.helper.downloadFile();
   }
 }

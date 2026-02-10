@@ -1,10 +1,10 @@
 <nav
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-  [class.bg-transparent]="!isScrolled"
-  [class.bg-background/80]="isScrolled"
-  [class.backdrop-blur-xl]="isScrolled"
-  [class.border-b]="isScrolled"
-  [class.border-border]="isScrolled"
+  [class.bg-transparent]="!isScrolled()"
+  [class.bg-background/80]="isScrolled()"
+  [class.backdrop-blur-xl]="isScrolled()"
+  [class.border-b]="isScrolled()"
+  [class.border-border]="isScrolled()"
 >
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
@@ -29,12 +29,13 @@
         </a>
 
         <!-- Preferences dropdown (theme + language inside) -->
-        <app-preferences></app-preferences>
+        <app-preferences/>
 
         <!-- CV -->
         <a
           class="ml-2 px-3 py-2 rounded-md bg-primary text-primary-foreground font-mono text-sm hover:opacity-90 transition"
           href="#"
+          (click)="downloadCV()"
         >
           {{ 'nav.downloadCV' | t }}
         </a>
@@ -68,7 +69,9 @@
           {{ link.key | t }}
         </a>
         <div class="flex items-center gap-3">
-          <app-preferences></app-preferences>
+          <!-- <app-preferences></app-preferences> -->
+           <app-theme/>
+           <app-language-switch/>
         </div>
       </div>
     </div>
