@@ -1,8 +1,8 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { TPipe } from '../../i18n/t-pipe';
 import { CommonModule } from '@angular/common';
-import { Preferences } from '../preferences/preferences';
 import { NavLink } from '../../models/types';
+import { Preferences } from '../preferences/preferences';
 
 @Component({
   selector: 'app-navbar',
