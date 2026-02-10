@@ -7,40 +7,44 @@
   </button>
 
   <!-- Dropdown -->
-  <div class="absolute right-0 mt-2 w-72 rounded-xl border border-border bg-card shadow-lg overflow-hidden z-50
-         transition-opacity duration-150" role="menu" [class.opacity-0]="!isOpen" [class.pointer-events-none]="!isOpen"
-    [class.translate-y-1]="!isOpen" [class.opacity-100]="isOpen" [class.translate-y-0]="isOpen">
-    <div class="px-3 py-2 border-b border-border">
-      <p class="font-mono text-xs text-muted-foreground">Options</p>
+<!-- Dropdown (nu mai folosi *ngIf aici) -->
+<div
+  [hidden]="!isOpen"
+  class="absolute right-0 mt-2 w-72 rounded-xl border border-border bg-card shadow-lg overflow-hidden z-50"
+  role="menu"
+  (click)="$event.stopPropagation()"
+>
+  <div class="px-3 py-2 border-b border-border">
+    <p class="font-mono text-xs text-muted-foreground">Options</p>
+  </div>
+
+  <div class="p-3 space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-circle-half-stroke text-muted-foreground text-[14px]"></i>
+        <span class="font-mono text-sm text-foreground">Theme</span>
+      </div>
+      <app-theme (changed)="handleChanged()"></app-theme>
     </div>
 
-    <div class="p-3 space-y-3">
-      <!-- Theme row -->
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-circle-half-stroke text-muted-foreground text-[14px]"></i>
-          <span class="font-mono text-sm text-foreground">Theme</span>
-        </div>
-
-        <app-theme (changed)="handleChanged()"></app-theme>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-globe text-muted-foreground text-[14px]"></i>
+        <span class="font-mono text-sm text-foreground">Language</span>
       </div>
-
-      <!-- Language row -->
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-globe text-muted-foreground text-[14px]"></i>
-          <span class="font-mono text-sm text-foreground">Language</span>
-        </div>
-
-        <app-language-switch (changed)="handleChanged()"></app-language-switch>
-      </div>
-    </div>
-
-    <div class="px-3 py-2 border-t border-border">
-      <button type="button" (click)="closeMenu()" class="w-full px-3 py-2 rounded-lg bg-secondary/40 hover:bg-secondary/60 transition
-               font-mono text-xs text-muted-foreground">
-        Close
-      </button>
+      <app-language-switch (changed)="handleChanged()"></app-language-switch>
     </div>
   </div>
+
+  <div class="px-3 py-2 border-t border-border">
+    <button
+      type="button"
+      (click)="closeMenu()"
+      class="w-full px-3 py-2 rounded-lg bg-secondary/40 hover:bg-secondary/60 transition font-mono text-xs text-muted-foreground"
+    >
+      Close
+    </button>
+  </div>
+</div>
+
 </div>
