@@ -35,6 +35,7 @@ export const projects: Project[] = [
       'project.1.feature.4',
       'project.1.feature.5',
     ],
+    image:'/assets/images/web_portfolio.png',
     github: 'https://github.com/georgegeorge11/web_portfolio',
     demo: 'https://georgepanfil.netlify.app/',
     type: 'Professional',
