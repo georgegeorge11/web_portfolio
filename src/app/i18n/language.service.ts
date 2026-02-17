@@ -27,6 +27,11 @@ export class LanguageService {
     return this._dict()[key] ?? key;
   }
 
+  getRaw(key: string): unknown {
+    const dict = this._dict();
+    return (dict as any)?.[key];
+  }
+
   async setLanguage(lang: Language): Promise<void> {
     await this.useLanguage(lang);
   }

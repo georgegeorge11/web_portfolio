@@ -21,9 +21,6 @@
   "about.p1": "I’m a technology-passionate developer with 2 years of experience building and optimizing web applications for complex industrial environments using Angular and .NET Core.",
   "about.p2": "I’ve worked on systems focused on performance, maintainability, and UX. I enjoy continuous learning and applying best practices: modular architecture, state management, and clean code.",
   "about.p3": "When I’m not coding, you’ll find me exploring open-source projects and experimenting with new tools. I believe the best solutions come from combining creativity with technical rigor.",
-  "about.coffeesPerDay": "Coffees/day",
-  "about.commitsPerWeek": "Commits/week",
-  "about.sideProjects": "Side projects",
   "about.coreValues": "// Core Values",
   "about.cleanCode.title": "Clean Code Advocate",
   "about.cleanCode.desc": "SOLID principles, design patterns, and code that reads like a story.",
@@ -50,28 +47,59 @@
   "exp.responsibilities": "// Responsibilities",
   "exp.present": "Present",
 
+  "exp.0.company": "Trident SM",
+  "exp.0.location": "Bucharest, Romania",
   "exp.0.role": "Full Stack Developer",
-  "exp.0.period": "Dec 2023 - Sep 2025",
-  "exp.0.desc": "Developed and optimized web systems for complex industrial environments using Angular and .NET Core.",
-  "exp.0.resp.0": "Led development of an internal IT team availability tracker used during holiday periods.",
-  "exp.0.resp.1": "Mentored junior developers on reactive forms and Angular best practices.",
-  "exp.0.resp.2": "Implemented dynamic admin forms (date ranges) and a calendar UI for users (daily availability).",
-  "exp.0.resp.3": "Designed role-based API endpoints and improved performance: -25% response time (EF Core .AsNoTracking + indexing), +30% task transition speed (NgRx), -40% re-renders (OnPush).",
+  "exp.0.period": "October 2025 - December 2025",
+  "exp.0.desc": "",
+  "exp.0.resp": [
+    {
+      "bullets": [
+        "Architected and began implementation of the front-end structure, prioritizing code stability, scalability, and a solid foundation for future features.",
+        "Engaged with stakeholders in project kick-off meetings to analyze the current application flow and define requirements for the next version, focusing on user experience and process optimization."
+      ]
+    }
+  ],
 
+  "exp.1.company": "Liberty",
+  "exp.1.location": "Galați, Romania",
   "exp.1.role": "Full Stack Developer",
-  "exp.1.period": "Oct 2025 - Dec 2025",
-  "exp.1.desc": "Architected and began implementation of a scalable front-end foundation, focusing on stability, maintainability, and future feature growth.",
-  "exp.1.resp.0": "Built the initial front-end foundation to support scalable feature development.",
-  "exp.1.resp.1": "Joined stakeholder kick-off meetings to analyze the application flow and define next-version requirements.",
-  "exp.1.resp.2": "Contributed to UX and process optimization by clarifying flows and requirements.",
-  "exp.1.resp.3": "Established a maintainable baseline with structure, conventions, and quality gates.",
+  "exp.1.period": "December 2023 - September 2025",
+  "exp.1.desc": "",
+  "exp.1.resp": [
+    {
+      "title": "Technical Assistance Scheduler App",
+      "bullets": [
+        "Led development of an internal IT team availability tracker used during holiday periods, guided junior devs on reactive forms and Angular best practices, implemented dynamic forms for admins to create date ranges, developed calendar UI for users to submit daily availability, designed API endpoints with role-based access"
+      ]
+    },
+    {
+      "title": "Manufacturing Execution System (MES) Optimization",
+      "bullets": [
+        "Reduced API response times by 25% through implementing efficient EF Core queries with .AsNoTracking() and proper indexing and improved Angular code quality by introducing standalone components for better maintainability,implementing modular architecture"
+      ]
+    },
+    {
+      "title": "Internal Task Management Platform",
+      "bullets": [
+        "Replaced legacy service-based architecture with NgRx state management, improving task transition speed by 30%, optimized performance by implementing selectors to minimize store computations, reducing re-renders by 40% viaOnPush change detection"
+      ]
+    }
+  ],
 
-  "exp.2.role": "Web Developer Trainee",
-  "exp.2.period": "Jul 2022 - Sep 2022",
-  "exp.2.desc": "Built a secure document management system for technicians and improved retrieval performance.",
-  "exp.2.resp.0": "Developed a secure document management application for 100+ warehouse technicians.",
-  "exp.2.resp.1": "Reduced retrieval time by 65% by caching frequently accessed drawings in the .NET Core API.",
-  "exp.2.resp.2": "Optimized SQL Server queries through proper indexing and query tuning.",
+  "exp.2.company": "Liberty",
+  "exp.2.location": "Galați, Romania",
+  "exp.2.role": "Web Developer Intern",
+  "exp.2.period": "July 2022 - September 2022",
+  "exp.2.desc": "",
+  "exp.2.resp": [
+    {
+      "title": "Technical Drawings Management System",
+      "bullets": [
+        "Built a secure document management application for 100+ steel plant warehouse technicians, reduced drawing retrieval time by 65% through .NET Core API caching of frequently accessed drawings and optimized SQL Server queries with proper indexing"
+      ]
+    }
+  ],
 
   "portfolio.tag": "./projects",
   "portfolio.title1": "Selected ",
@@ -84,20 +112,42 @@
   "portfolio.openSource": "Open Source",
   "portfolio.githubCta": "View all projects on GitHub",
 
-  "project.0.title": "Team Management System",
-  "project.0.desc": "Bachelor’s thesis project: interactive dashboards, drag-and-drop task board, JWT-secured API, and query optimizations (50% faster searches on indexed fields).",
+  "project.0.title": "SYNTX",
+  "project.0.status": "In Progress",
+  "project.0.desc": "SYNTX brings AI directly into the developer workflow: a smart code editor with AI autocomplete, context-aware chat that understands your codebase, a local LLM trained from scratch (no external AI APIs), optional web-augmented reasoning, and a sandboxed Docker runtime — all inside a project-based workspace with persistent conversations.",
+
+  "project.0.feature.0": "Smart code editor with AI autocomplete (ghost text + Tab accept)",
+  "project.0.feature.1": "Context-aware AI chat that understands your codebase",
+  "project.0.feature.2": "Local LLM trained from scratch (no external AI APIs)",
+  "project.0.feature.3": "Optional web-augmented reasoning for up-to-date answers",
+  "project.0.feature.4": "Built-in terminal with sandboxed execution (Docker)",
+  "project.0.feature.5": "Project-based workspace with persistent conversations",
+
+  "project.1.title": "Web Portfolio",
+  "project.1.status": "Completed",
+  "project.1.desc": "A responsive, modern web portfolio built with Angular and Tailwind CSS, showcasing my experience, skills, and projects.",
+  "project.1.feature.0": "Built with Angular and Tailwind CSS for a modern, responsive design",
+  "project.1.feature.1": "Dynamic theming with light/dark mode toggle",
+  "project.1.feature.2": "Internationalization (i18n) support for English and Romanian languages",
+  "project.1.feature.3": "Showcases experience, skills, and projects with a clean, user-friendly interface",
 
   "edu.tag": "./education",
-  "edu.title1": "Education & ",
-  "edu.titleHighlight": "Certifications",
+  "edu.title1": "Education ",
+  "edu.titleHighlight": "& Learning",
   "edu.subtitle": "Continuous learning through formal education, online courses, and hands-on projects.",
-  "edu.degree": "Bachelor of Computer Science - Software Engineering",
-  "edu.institution": "“Dunărea de Jos” University of Galați",
-  "edu.specialization": "Software Engineering",
-  "edu.gpa": "",
-  "edu.thesis": "Bachelor’s thesis: Team Management System",
+  "edu.0.degree": "Master of Advanced Computer Science - Software Engineering",
+  "edu.0.institution": "“Dunărea de Jos” University of Galați",
+  "edu.0.specialization": "Software Engineering",
+  "edu.0.period": "2024 - 2026",
+  "edu.0.gpa": "N/A",
+  "edu.0.thesis": "Master’s thesis: ",
+  "edu.1.degree": "Bachelor of Computer Science - Software Engineering",
+  "edu.1.institution": "“Dunărea de Jos” University of Galați",
+  "edu.1.specialization": "Software Engineering",
+  "edu.1.period": "2019 - 2023",
+  "edu.1.gpa": "8.75",
+  "edu.1.thesis": "Bachelor’s thesis: Team Management System",
   "edu.currentlyLearning": "// Currently Learning",
-  "edu.certifications": "// Certifications",
 
   "contact.tag": "./contact",
   "contact.title1": "Let’s ",

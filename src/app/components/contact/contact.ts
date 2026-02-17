@@ -1,8 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TPipe } from '../../i18n/t-pipe';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TPipe } from '../../i18n/t-pipe';
 import { ContactInfo, SocialLink } from '../../models/contact-info';
+import { ContactService } from '../../core/contact-service';
+
+type ContactFormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  honey: string; // honeypot anti-spam
+};
 
 @Component({
   selector: 'app-contact',
@@ -11,16 +20,17 @@ import { ContactInfo, SocialLink } from '../../models/contact-info';
   styleUrl: './contact.css',
 })
 export class Contact {
+  constructor(private contactService: ContactService) {}
+
   isSubmitting = false;
 
-  formData = {
+  formData: ContactFormData = {
     name: '',
     email: '',
     subject: '',
     message: '',
+    honey: '',
   };
-
-  // constructor(private toast: ToastService) {}
 
   socialLinks: SocialLink[] = [
     {
@@ -59,22 +69,24 @@ export class Contact {
 
     this.isSubmitting = true;
 
-    await new Promise<void>((r) => window.setTimeout(r, 1000));
+    try {
+      await this.contactService.send({
+        name: this.formData.name,
+        email: this.formData.email,
+        subject: this.formData.subject,
+        message: this.formData.message,
+        honey: this.formData.honey,
+      });
 
-    // this.toast.show({
-    //   title: this.t('contact.toastTitle'),
-    //   description: this.t('contact.toastDesc'),
-    // });
+      this.formData = { name: '', email: '', subject: '', message: '', honey: '' };
+      form.resetForm(this.formData);
 
-    this.formData = { name: '', email: '', subject: '', message: '' };
-    form.resetForm(this.formData);
-
-    this.isSubmitting = false;
-  }
-
-  private t(key: string): string {
-    // fallback: dacă nu ai injectat LanguageService aici, lasă toast-ul cu cheile
-    // Recomandat: injectează LanguageService și returnează this.lang.t(key).
-    return key;
+      // aici poți integra toast success dacă ai
+    } catch (e) {
+      console.error(e);
+      // aici toast error dacă vrei
+    } finally {
+      this.isSubmitting = false;
+    }
   }
 }

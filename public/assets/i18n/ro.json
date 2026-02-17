@@ -1,9 +1,8 @@
 {
-
   "nav.theme": "Temă",
   "nav.language": "Limbă",
   "nav.about": "Despre",
-  "nav.skills": "Skills",
+  "nav.skills": "Competențe",
   "nav.experience": "Experiență",
   "nav.projects": "Proiecte",
   "nav.education": "Educație",
@@ -12,72 +11,100 @@
 
   "hero.available": "Disponibil pentru proiecte noi",
   "hero.yearsExp": "2 ani experiență",
-  "hero.summary": "Construiesc aplicații web moderne și performante. Pasionat de clean code, arhitectură scalabilă și UX excepțional. Mereu în căutarea următorului challenge tehnic.",
+  "hero.summary": "Construiesc aplicații web moderne și performante. Pasionat de clean code, arhitectură scalabilă și experiențe UX excelente. Mereu în căutarea următorului challenge tehnic.",
   "hero.downloadCV": "Descarcă CV",
   "hero.viewProjects": "Vezi proiectele",
 
-  "about.tag": "./about-me",
+  "about.tag": "./despre-mine",
   "about.title1": "Mai mult decât ",
   "about.titleHighlight": "cod",
-  "about.p1": "Sunt un developer pasionat de tehnologie, cu 2 ani de experiență în construirea și optimizarea aplicațiilor web pentru medii industriale complexe, folosind Angular și .NET Core.",
-  "about.p2": "Am lucrat pe sisteme cu focus pe performanță, maintainability și UX. Îmi place să învăț constant și să aplic best practices: arhitectură modulară, state management, clean code.",
-  "about.p3": "Când nu codez, mă găsești explorând proiecte open-source și experimentând cu tool-uri noi. Cred că cele mai bune soluții apar când combini creativitatea cu rigoarea tehnică.",
-  "about.coffeesPerDay": "Cafele pe zi",
-  "about.commitsPerWeek": "Commits/săptămână",
-  "about.sideProjects": "Side projects",
-  "about.coreValues": "// Core Values",
-  "about.cleanCode.title": "Clean Code Advocate",
-  "about.cleanCode.desc": "SOLID principles, design patterns și cod care se citește ca o poveste.",
+  "about.p1": "Sunt un developer pasionat de tehnologie, cu 2 ani de experiență în dezvoltarea și optimizarea aplicațiilor web pentru medii industriale complexe folosind Angular și .NET Core.",
+  "about.p2": "Am lucrat pe sisteme orientate spre performanță, mentenabilitate și experiență utilizator. Îmi place să învăț continuu și să aplic best practices: arhitectură modulară, state management și clean code.",
+  "about.p3": "Când nu codez, explorez proiecte open-source și experimentez cu tool-uri noi. Cred că cele mai bune soluții apar din combinația dintre creativitate și rigoare tehnică.",
+  "about.coreValues": "// Valori Fundamentale",
+  "about.cleanCode.title": "Promotor Clean Code",
+  "about.cleanCode.desc": "Principii SOLID, design patterns și cod care se citește ca o poveste.",
   "about.performance.title": "Performance First",
-  "about.performance.desc": "Optimizez până la ultima milisecundă. Lazy loading, caching, query tuning, bundle optimization.",
+  "about.performance.desc": "Optimizez până la ultima milisecundă. Lazy loading, caching, optimizare query-uri și bundle size.",
   "about.problemSolver.title": "Problem Solver",
   "about.problemSolver.desc": "Îmi place să descompun probleme complexe în soluții elegante și scalabile.",
-  "about.myApproach": "// My approach",
+  "about.myApproach": "// Abordarea mea",
 
   "skills.tag": "./tech-stack",
   "skills.title1": "Tehnologii & ",
   "skills.titleHighlight": "Competențe",
-  "skills.subtitle": "Stack-ul meu principal se concentrează pe ecosistemul Angular + .NET Core.",
+  "skills.subtitle": "Stack-ul meu principal este axat pe ecosistemul Angular + .NET Core.",
   "skills.frontend": "Frontend",
   "skills.backend": "Backend",
-  "skills.database": "Database & Storage",
+  "skills.database": "Baze de Date",
   "skills.devops": "DevOps & Cloud",
-  "skills.toolsWorkflow": "Tools & Workflow",
+  "skills.toolsWorkflow": "Tool-uri & Workflow",
 
-  "exp.tag": "./experience",
+  "exp.tag": "./experienta",
   "exp.title1": "Experiență ",
   "exp.titleHighlight": "Profesională",
-  "exp.subtitle": "2 ani de experiență în dezvoltarea și optimizarea sistemelor web pentru medii industriale complexe, cu focus pe performanță și maintainability.",
+  "exp.subtitle": "2 ani de experiență în dezvoltarea și optimizarea sistemelor web pentru medii industriale complexe, cu focus pe performanță și mentenabilitate.",
   "exp.responsibilities": "// Responsabilități",
   "exp.present": "Prezent",
 
+  "exp.0.company": "Trident SM",
+  "exp.0.location": "București, România",
   "exp.0.role": "Full Stack Developer",
-  "exp.0.period": "Dec 2023 - Sep 2025",
-  "exp.0.desc": "Dezvoltarea și optimizarea sistemelor web pentru medii industriale complexe, folosind Angular și .NET Core.",
-  "exp.0.resp.0": "Am condus dezvoltarea unei aplicații interne de disponibilitate pentru echipa IT (folosită în perioade de concedii).",
-  "exp.0.resp.1": "Am ghidat developeri juniori pe reactive forms și best practices Angular.",
-  "exp.0.resp.2": "Am implementat dynamic forms pentru admin (date ranges) și calendar UI pentru utilizatori (daily availability).",
-  "exp.0.resp.3": "Am proiectat endpoint-uri API cu role-based access și am îmbunătățit performanța: -25% response time (EF Core .AsNoTracking + indexing), +30% task transition speed (NgRx), -40% re-renders (OnPush).",
+  "exp.0.period": "Octombrie 2025 - Decembrie 2025",
+  "exp.0.desc": "",
+  "exp.0.resp": [
+    {
+      "bullets": [
+        "Am arhitecturat și început implementarea noii structuri front-end, prioritizând stabilitatea codului, scalabilitatea și o fundație solidă pentru viitoare funcționalități.",
+        "Am participat la întâlniri de kick-off cu stakeholderii pentru a analiza fluxul aplicației existente și a defini cerințele pentru următoarea versiune, cu focus pe UX și optimizarea proceselor."
+      ]
+    }
+  ],
 
+  "exp.1.company": "Liberty",
+  "exp.1.location": "Galați, România",
   "exp.1.role": "Full Stack Developer",
-  "exp.1.period": "Oct 2025 - Dec 2025",
-  "exp.1.desc": "Am arhitecturat și început implementarea structurii de front-end, prioritizând stabilitate, scalabilitate și o bază solidă pentru feature-uri viitoare.",
-  "exp.1.resp.0": "Am construit foundation-ul front-end pentru dezvoltare scalabilă și extensibilă.",
-  "exp.1.resp.1": "Am participat la kick-off cu stakeholderi pentru a analiza flow-ul aplicației și a defini cerințele pentru versiunea următoare.",
-  "exp.1.resp.2": "Am contribuit la îmbunătățirea UX și la optimizarea proceselor prin clarificarea fluxurilor și a cerințelor.",
-  "exp.1.resp.3": "Am pus bazele unui proiect maintainable, cu focus pe structură, convenții și quality gates.",
+  "exp.1.period": "Decembrie 2023 - Septembrie 2025",
+  "exp.1.desc": "",
+  "exp.1.resp": [
+    {
+      "title": "Aplicație Programare Asistență Tehnică",
+      "bullets": [
+        "Am condus dezvoltarea unei aplicații interne pentru gestionarea disponibilității echipei IT în perioadele de sărbători, am ghidat developeri juniori în utilizarea reactive forms și best practices Angular, am implementat formulare dinamice pentru administratori pentru definirea intervalelor de timp, am dezvoltat un calendar pentru introducerea disponibilității zilnice și am proiectat endpoint-uri API cu control bazat pe roluri."
+      ]
+    },
+    {
+      "title": "Optimizare Manufacturing Execution System (MES)",
+      "bullets": [
+        "Am redus timpul de răspuns al API-urilor cu 25% prin implementarea de query-uri EF Core optimizate cu .AsNoTracking() și indexare corectă și am îmbunătățit calitatea codului Angular prin introducerea componentelor standalone și a unei arhitecturi modulare."
+      ]
+    },
+    {
+      "title": "Platformă Internă de Task Management",
+      "bullets": [
+        "Am înlocuit arhitectura bazată pe servicii cu state management NgRx, crescând viteza de tranziție a task-urilor cu 30%, am optimizat performanța prin utilizarea selectorilor pentru a reduce calculele din store și am diminuat re-render-urile cu 40% prin utilizarea strategiei OnPush."
+      ]
+    }
+  ],
 
-  "exp.2.role": "Web Developer Trainee",
-  "exp.2.period": "Iul 2022 - Sep 2022",
-  "exp.2.desc": "Am construit un sistem securizat de document management pentru tehnicieni (warehouse) și am optimizat retrieval performance.",
-  "exp.2.resp.0": "Am dezvoltat o aplicație securizată de document management pentru 100+ tehnicieni din zona de depozit/warehouse.",
-  "exp.2.resp.1": "Am redus timpul de retrieval cu 65% prin caching în .NET Core API pentru documentele accesate frecvent.",
-  "exp.2.resp.2": "Am optimizat SQL Server queries prin indexing corect și query tuning.",
+  "exp.2.company": "Liberty",
+  "exp.2.location": "Galați, România",
+  "exp.2.role": "Web Developer Intern",
+  "exp.2.period": "Iulie 2022 - Septembrie 2022",
+  "exp.2.desc": "",
+  "exp.2.resp": [
+    {
+      "title": "Sistem de Management Desene Tehnice",
+      "bullets": [
+        "Am dezvoltat o aplicație securizată pentru gestionarea documentelor utilizată de peste 100 de tehnicieni din cadrul combinatului siderurgic și am redus timpul de regăsire a desenelor cu 65% prin implementarea caching-ului în API-ul .NET Core și optimizarea query-urilor SQL Server prin indexare."
+      ]
+    }
+  ],
 
-  "portfolio.tag": "./projects",
+  "portfolio.tag": "./proiecte",
   "portfolio.title1": "Proiecte ",
   "portfolio.titleHighlight": "Selectate",
-  "portfolio.subtitle": "O selecție din proiectele la care am lucrat - de la aplicații enterprise la contribuții open source.",
+  "portfolio.subtitle": "O selecție de proiecte la care am lucrat — de la aplicații enterprise la contribuții open-source.",
   "portfolio.all": "Toate",
   "portfolio.fullStack": "Full Stack",
   "portfolio.frontend": "Frontend",
@@ -85,20 +112,42 @@
   "portfolio.openSource": "Open Source",
   "portfolio.githubCta": "Vezi toate proiectele pe GitHub",
 
-  "project.0.title": "Team Management System",
-  "project.0.desc": "Proiect de licență: dashboard-uri interactive cu task board drag-and-drop, API cu JWT auth și optimizări de query (50% faster searches pe câmpuri indexate).",
+  "project.0.title": "SYNTX",
+  "project.0.status": "În dezvoltare",
+  "project.0.desc": "SYNTX aduce AI direct în workflow-ul dezvoltatorului: un editor inteligent cu autocomplete AI, chat contextual care înțelege codebase-ul, un LLM local antrenat de la zero (fără API-uri externe), reasoning augmentat cu web opțional și un runtime izolat în Docker — toate într-un workspace bazat pe proiecte cu conversații persistente.",
 
-  "edu.tag": "./education",
-  "edu.title1": "Educație & ",
-  "edu.titleHighlight": "Certificări",
+  "project.0.feature.0": "Editor inteligent cu autocomplete AI (ghost text + Tab accept)",
+  "project.0.feature.1": "Chat contextual care înțelege codebase-ul",
+  "project.0.feature.2": "LLM local antrenat de la zero (fără API-uri externe)",
+  "project.0.feature.3": "Reasoning augmentat cu web pentru răspunsuri actualizate",
+  "project.0.feature.4": "Terminal integrat cu execuție izolată (Docker)",
+  "project.0.feature.5": "Workspace bazat pe proiecte cu conversații persistente",
+
+  "project.1.title": "Web Portfolio",
+  "project.1.status": "Finalizat",
+  "project.1.desc": "Un portofoliu web modern și responsive construit cu Angular și Tailwind CSS, care prezintă experiența, competențele și proiectele mele.",
+  "project.1.feature.0": "Construit cu Angular și Tailwind CSS pentru un design modern și responsive",
+  "project.1.feature.1": "Suport pentru light/dark mode",
+  "project.1.feature.2": "Suport internaționalizare (i18n) pentru română și engleză",
+  "project.1.feature.3": "Prezentare experiență, competențe și proiecte într-o interfață curată și intuitivă",
+
+  "edu.tag": "./educatie",
+  "edu.title1": "Educație ",
+  "edu.titleHighlight": "& Învățare",
   "edu.subtitle": "Învățare continuă prin educație formală, cursuri online și proiecte practice.",
-  "edu.degree": "Bachelor of Computer Science - Software Engineering",
-  "edu.institution": "„Dunărea de Jos” University Galați",
-  "edu.specialization": "Software Engineering",
-  "edu.gpa": "",
-  "edu.thesis": "Proiect de licență: Team Management System",
-  "edu.currentlyLearning": "// În curs de învățare",
-  "edu.certifications": "// Certificări",
+  "edu.0.degree": "Master Tehnologii Informatice Avansate",
+  "edu.0.institution": "Universitatea “Dunărea de Jos” Galați",
+  "edu.0.specialization": "Tehnologii Informatice Avansate",
+  "edu.0.period": "2024 - 2026",
+  "edu.0.gpa": "N/A",
+  "edu.0.thesis": "Master: ",
+  "edu.1.degree": "Licenta Calculatoare și Tehnologia Informației",
+  "edu.1.institution": "Universitatea “Dunărea de Jos” Galați",
+  "edu.1.specialization": "Calculatoare și Tehnologia Informației",
+  "edu.1.period": "2019 - 2023",
+  "edu.1.gpa": "8.75",
+  "edu.1.thesis": "Licenta: Sistem de Management al Echipei",
+  "edu.currentlyLearning": "// În prezent învăț",
 
   "contact.tag": "./contact",
   "contact.title1": "Hai să ",
@@ -106,31 +155,22 @@
   "contact.subtitle": "Sunt deschis la oportunități noi, proiecte interesante sau pur și simplu o conversație despre tech. Nu ezita să mă contactezi!",
   "contact.location": "Galați, România",
   "contact.locationLabel": "Locație",
-  "contact.social": "// Social",
-  "contact.available": "Disponibil pentru proiecte",
-  "contact.availableDesc": "Caut oportunități full-time sau proiecte freelance interesante.",
+ "contact.social": "// Social",
+  "contact.available": "Available for projects",
+  "contact.availableDesc": "Looking for full-time opportunities or interesting freelance projects.",
   "contact.name": "// Nume",
   "contact.namePlaceholder": "Numele tău",
   "contact.email": "// Email",
   "contact.subject": "// Subiect",
-  "contact.subjectPlaceholder": "Despre ce vrei să discutăm?",
+  "contact.subjectPlaceholder": "Ce ai dori să discuți?",
   "contact.message": "// Mesaj",
   "contact.messagePlaceholder": "Spune-mi mai multe despre proiectul tău...",
   "contact.sending": "Se trimite...",
   "contact.send": "Trimite mesaj",
   "contact.toastTitle": "Mesaj trimis! ✨",
-  "contact.toastDesc": "Îți voi răspunde în cel mai scurt timp posibil.",
-
+  "contact.toastDesc": "Voi reveni la tine cât mai curând posibil.",
   "footer.tagline": "Full Stack Developer • Angular • .NET Core",
-  "footer.builtWith": "Built with",
-  "footer.using": "using Angular & Tailwind",
-  "footer.allSystems": "Toate sistemele funcționale",
-
-  "years.2": "2 ani",
-  "years.1.5": "1.5 ani",
-  "years.1": "1 an",
-  "years.0.5": "6 luni",
-
-  "exp.features": "Features",
-  "exp.projects": "Proiecte"
+  "footer.builtWith": "Construit cu",
+  "footer.using": "folosind Angular & Tailwind",
+  "footer.allSystems": "Toate sistemele funcționale"
 }

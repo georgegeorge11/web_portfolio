@@ -16,9 +16,4 @@ values: ValueCard[] = [
     { iconClass: 'fa-solid fa-bullseye', titleKey: 'about.problemSolver.title', descKey: 'about.problemSolver.desc' },
   ];
 
-  funFacts: FunFact[] = [
-    { iconClass: 'fa-solid fa-mug-hot', labelKey: 'about.coffeesPerDay', value: '4+' },
-    { iconClass: 'fa-solid fa-code', labelKey: 'about.commitsPerWeek', value: '50+' },
-    { iconClass: 'fa-solid fa-gamepad', labelKey: 'about.sideProjects', value: '3' },
-  ];
 }

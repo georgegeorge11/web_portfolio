@@ -1,0 +1,141 @@
+<section id="portfolio" class="section-padding relative overflow-hidden">
+  <div class="absolute inset-0 tech-grid opacity-20"></div>
+
+  <div class="container mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-4">
+        <div class="p-2 rounded-lg bg-primary/10 border border-primary/30">
+          <i class="fa-solid fa-folder-tree text-primary text-[20px]"></i>
+        </div>
+        <span class="text-sm text-primary font-mono uppercase tracking-wider">
+          {{ 'portfolio.tag' | t }}
+        </span>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">
+        {{ 'portfolio.title1' | t }}<span class="gradient-text">{{ 'portfolio.titleHighlight' | t }}</span>
+      </h2>
+
+      <p class="text-lg text-muted-foreground max-w-2xl mb-8">
+        {{ 'portfolio.subtitle' | t }}
+      </p>
+
+      <!-- Categories -->
+      <div class="flex flex-wrap gap-2 mb-12">
+        <button *ngFor="let key of categoryKeys" type="button" (click)="setCategory(key)"
+          class="px-3 py-2 rounded-md text-sm font-mono transition-all border"
+          [class.bg-primary]="activeCategoryKey === key" [class.text-primary-foreground]="activeCategoryKey === key"
+          [class.border-primary]="activeCategoryKey === key" [class.bg-transparent]="activeCategoryKey !== key"
+          [class.text-muted-foreground]="activeCategoryKey !== key" [class.border-border]="activeCategoryKey !== key"
+          [class.hover:border-primary/50]="activeCategoryKey !== key"
+          [class.hover:bg-primary/10]="activeCategoryKey !== key">
+          {{ key | t }}
+        </button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div *ngFor="let project of filteredProjects"
+          class="group rounded-xl bg-card border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+          <!-- Image / Placeholder -->
+          <div class="relative h-48 overflow-hidden">
+            <ng-container *ngIf="project.image; else noImage">
+              <img [src]="project.image" [alt]="project.titleKey | t"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy" />
+            </ng-container>
+
+            <ng-template #noImage>
+              <div class="w-full h-full bg-secondary/40 flex items-center justify-center">
+                <div class="text-center">
+                  <i class="fa-solid fa-image text-muted-foreground text-[22px]"></i>
+                  <div class="mt-2 text-xs font-mono text-muted-foreground">No preview</div>
+                </div>
+              </div>
+            </ng-template>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
+
+            <!-- Badges: Type + Status -->
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              <span class="px-2 py-1 rounded-md text-xs font-mono" [class]="typeBadgeClass(project.type)">
+                {{ project.type }}
+              </span>
+
+              <span *ngIf="project.statusKey"
+                class="px-2 py-1 rounded-md text-xs font-mono bg-secondary/70 text-foreground border border-border">
+                {{ project.statusKey | t }}
+              </span>
+            </div>
+
+            <!-- Stars (optional) -->
+            <div *ngIf="project.stars !== undefined && project.stars !== null"
+              class="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 rounded-full bg-card/80 backdrop-blur-sm">
+              <i class="fa-solid fa-star text-yellow-400 text-[14px]"></i>
+              <span class="text-xs text-foreground font-mono">{{ project.stars }}</span>
+            </div>
+
+
+            <div class="absolute inset-0 bg-card/90 flex items-center justify-center gap-4 transition-opacity duration-300 opacity-100 pointer-events-auto
+         md:opacity-0 md:pointer-events-none md:group-hover:opacity-100 md:group-hover:pointer-events-auto">
+              <button *ngIf="project.github" type="button" (click)="openUrl(project.github)"
+                class="p-3 rounded-full bg-secondary border border-border hover:border-primary transition-colors"
+                aria-label="Open GitHub">
+                <i class="fa-brands fa-github text-foreground text-[20px]"></i>
+              </button>
+
+              <button *ngIf="project.demo" type="button" (click)="openUrl(project.demo)"
+                class="p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-colors"
+                aria-label="Open Demo">
+                <i class="fa-solid fa-eye text-[20px]"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+              {{ project.titleKey | t }}
+            </h3>
+
+            <p class="text-sm text-muted-foreground mb-4 line-clamp-3">
+              {{ project.descKey | t }}
+            </p>
+
+            <!-- Features (keys or plain text -> pipe handles both) -->
+            <div class="space-y-1.5 mb-4">
+              <div *ngFor="let feature of project.features | slice:0:3"
+                class="flex items-start gap-2 text-xs text-muted-foreground">
+                <div class="w-1 h-1 rounded-full bg-primary mt-[6px]"></div>
+                <span>{{ feature | t }}</span>
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="flex flex-wrap gap-1.5">
+              <span *ngFor="let tech of project.technologies "
+                class="px-2 py-1 rounded-md text-xs font-mono bg-secondary/50">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <a href="https://github.com/georgegeorge11" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-secondary border border-border
+                 hover:border-primary/50 hover:bg-primary/10 transition-all group">
+          <i class="fa-brands fa-github text-foreground group-hover:text-primary transition-colors text-[20px]"></i>
+          <span class="font-mono text-foreground group-hover:text-primary transition-colors">
+            {{ 'portfolio.githubCta' | t }}
+          </span>
+          <i
+            class="fa-solid fa-arrow-up-right-from-square text-muted-foreground group-hover:text-primary transition-colors text-[16px]"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

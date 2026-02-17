@@ -49,20 +49,19 @@
           </p>
 
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-fade-up stagger-5">
-            <a
+            <button
               class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition pulse-glow font-mono"
-              href="#"
-              click="downloadCV()"
+              (click)="downloadCV()"
             >
               <i class="fa-solid fa-download text-[18px]"></i>
               {{ 'hero.downloadCV' | t }}
-            </a>
+            </button>
 
             <a
               class="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-primary/50 hover:bg-primary/10 transition font-mono"
               href="#portfolio"
             >
-              <i class="fa-brands fa-github text-[18px]"></i>
+              <i class="fa fa-code-fork text-[18px]"></i>
               {{ 'hero.viewProjects' | t }}
             </a>
           </div>

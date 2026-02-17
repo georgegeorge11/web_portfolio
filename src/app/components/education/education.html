@@ -1,0 +1,89 @@
+<section id="education" class="section-padding bg-card/30 relative overflow-hidden">
+  <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+  </div>
+
+  <div class="container mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-4">
+        <div class="p-2 rounded-lg bg-primary/10 border border-primary/30">
+          <i class="fa-solid fa-graduation-cap text-primary text-[20px]"></i>
+        </div>
+        <span class="text-sm text-primary font-mono uppercase tracking-wider">
+          {{ 'edu.tag' | t }}
+        </span>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">
+        {{ 'edu.title1' | t }}<span class="gradient-text">{{ 'edu.titleHighlight' | t }}</span>
+      </h2>
+
+      <p class="text-lg text-muted-foreground max-w-2xl mb-12">
+        {{ 'edu.subtitle' | t }}
+      </p>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Left column -->
+        <div class="space-y-8">
+          <!-- Education card(s) -->
+          <div *ngFor="let edu of education" class="p-6 rounded-xl bg-card border border-border">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-lg bg-primary/10 border border-primary/30">
+                <i class="fa-solid fa-graduation-cap text-primary text-[24px]"></i>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-foreground mb-1">
+                  {{ edu.degreeKey | t }}
+                </h3>
+
+                <p class="text-primary font-mono text-sm mb-2">
+                  {{ edu.institutionKey | t }}
+                </p>
+
+                <span class="inline-flex items-center" [class]="badgeOutline">
+                  {{ edu.period | t }}
+                </span>
+
+                <p class="text-muted-foreground text-sm mb-3 mt-4">
+                  {{ edu.descriptionKey | t }}
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span *ngFor="let k of edu.highlightsKeys" class="inline-flex items-center" [class]="badgeSecondary">
+                    {{ k | t }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="p-6 rounded-xl bg-card border border-border">
+            <div class="flex items-center gap-3 mb-6">
+              <i class="fa-solid fa-book-open text-accent text-[20px]"></i>
+              <h3 class="text-lg font-semibold text-foreground font-mono">
+                {{ 'edu.currentlyLearning' | t }}
+              </h3>
+            </div>
+
+            <div class="space-y-4">
+              <div *ngFor="let item of currentlyLearning">
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm text-foreground font-mono">{{ item.name }}</span>
+                  <span class="text-xs text-muted-foreground">{{ item.progress }}%</span>
+                </div>
+
+                <div class="h-2 bg-secondary rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-500"
+                    [style.width.%]="item.progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
