@@ -4,12 +4,11 @@
 
 [functions]
   directory = "netlify/functions"
-
+  
 [[plugins]]
   package = "@netlify/angular-runtime"
 
-  [[redirects]]
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
